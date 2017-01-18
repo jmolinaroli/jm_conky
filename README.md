@@ -1,9 +1,7 @@
 jm_conky 
 =====
 
-This is my Conky configuration files. 
-
-![Conky]()
+![alt tag] (https://github.com/jmolinaroli/jm_conky/blob/master/img/pic01.png)
 
 
 Installation
@@ -20,13 +18,15 @@ Copy in /home/USER/:
 * .conky
 * .conkyrc0
 * .conkyrc1
-* conkystart
+* conkystart.sh
 
-Otherwise you can use the configuration file 
+Otherwise you can use the configuration file:
 
-''
-$ install.sh
-''
+```sh
+$ ./install.sh
+```
+
+To start the scripts use conkystart.sh
 
 Enjoy!
 
@@ -43,4 +43,6 @@ Features
 
 
 
-![alt tag] (https://github.com/jmolinaroli/)
+![alt tag] (https://github.com/jmolinaroli/jm_conky/blob/master/img/pic03.png)
+![alt tag] (https://github.com/jmolinaroli/jm_conky/blob/master/img/pic04.png)
+![alt tag] (https://github.com/jmolinaroli/jm_conky/blob/master/img/pic02.png)
