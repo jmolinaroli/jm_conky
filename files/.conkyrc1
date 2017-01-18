@@ -1,0 +1,75 @@
+# — Conky settings — #
+background no
+update_interval 1
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+imlib_cache_size 0
+
+temperature_unit celsius
+
+# — Window specifications — #
+
+own_window_class conky
+own_window yes
+own_window_type conky
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 180
+maximum_width 984
+
+alignment tl
+gap_x 20
+gap_y 0
+
+# — Graphics settings — #
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# — Text settings — #
+use_xft yes
+xftfont pftempestafivecondensed:size=12
+xftalpha 0.5
+
+uppercase no
+
+default_color FFFFFF
+color1 00A9FF
+# — Lua Load — #
+	lua_load ~/.conky/clock_rings1.lua
+	lua_draw_hook_pre clock_rings
+
+
+
+TEXT
+
+
+${if_running spotify}
+${voffset -22}
+${texeci 1 /usr/bin/spotify-nowplaying-work}
+${color}${exec cat ~/.cache/spotify-nowplaying}
+#${goto 40}${color1}${exec cat ~/.cache/spotify-nowplaying-elapsed-pretty} ${color}${execbar cat ~/.cache/spotify-nowplaying-} {color1}${exec cat ~/.cache/spotify-nowplaying-length-pretty}
+${goto 42}${color1}${voffset 8}Spotify
+
+${else}\
+${goto 58}${color}${voffset 44}${execi 3600 date +%A}
+${goto 34}${color1}${execi 3600 date +%d} ${execi 3600 date +%B} ${execi 3600 date +%Y}
+${endif}
+
+
+${texeci 1 ~/.conky/image}
+${image ~/.conky/image.png -p 118,35}
+
+
+
+

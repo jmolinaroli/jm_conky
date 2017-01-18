@@ -1,0 +1,12 @@
+#! /usr/bin/env python
+
+import os
+import time
+from datetime import datetime
+
+now = time.strftime("%H")
+
+if int(now) > int(5) and int(now) < int(20):
+	os.system("cp ~/.conky/sun.png ~/.conky/image.png ")
+else:
+	os.system("cp ~/.conky/moon.png ~/.conky/image.png ")
